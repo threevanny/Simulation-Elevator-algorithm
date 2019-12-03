@@ -1,0 +1,61 @@
+# Project: Proyecto1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = simuladorElevador.o reloj.o puerta.o piso.o persona.o luz.o elevador.o edificio.o campana.o botonPiso.o botonElevador.o bitacora.o
+LINKOBJ  = simuladorElevador.o reloj.o puerta.o piso.o persona.o luz.o elevador.o edificio.o campana.o botonPiso.o botonElevador.o bitacora.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = elevador.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+simuladorElevador.o: simuladorElevador.cpp
+	$(CPP) -c simuladorElevador.cpp -o simuladorElevador.o $(CXXFLAGS)
+
+reloj.o: reloj.cpp
+	$(CPP) -c reloj.cpp -o reloj.o $(CXXFLAGS)
+
+puerta.o: puerta.cpp
+	$(CPP) -c puerta.cpp -o puerta.o $(CXXFLAGS)
+
+piso.o: piso.cpp
+	$(CPP) -c piso.cpp -o piso.o $(CXXFLAGS)
+
+persona.o: persona.cpp
+	$(CPP) -c persona.cpp -o persona.o $(CXXFLAGS)
+
+luz.o: luz.cpp
+	$(CPP) -c luz.cpp -o luz.o $(CXXFLAGS)
+
+elevador.o: elevador.cpp
+	$(CPP) -c elevador.cpp -o elevador.o $(CXXFLAGS)
+
+edificio.o: edificio.cpp
+	$(CPP) -c edificio.cpp -o edificio.o $(CXXFLAGS)
+
+campana.o: campana.cpp
+	$(CPP) -c campana.cpp -o campana.o $(CXXFLAGS)
+
+botonPiso.o: botonPiso.cpp
+	$(CPP) -c botonPiso.cpp -o botonPiso.o $(CXXFLAGS)
+
+botonElevador.o: botonElevador.cpp
+	$(CPP) -c botonElevador.cpp -o botonElevador.o $(CXXFLAGS)
+
+bitacora.o: bitacora.cpp
+	$(CPP) -c bitacora.cpp -o bitacora.o $(CXXFLAGS)
